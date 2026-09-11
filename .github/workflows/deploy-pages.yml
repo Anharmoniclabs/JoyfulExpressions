@@ -1,26 +1,64 @@
 name: Deploy Joyful Expressions to GitHub Pages
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check required production files
+
+      - name: Restore encoded production images
+        shell: bash
         run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          shopt -s nullglob
+          for f in assets/encoded/*.b64; do
+            name="$(basename "$f" .b64)"
+            base64 --decode "$f" > "assets/images/${name}.webp"
+          done
+
+      - name: Validate production site and every required image
+        shell: bash
+        run: |
+          set -euo pipefail
           test -f index.html
           test -f assets/styles.css
           test -f assets/script.js
-          test -d assets/images
+          for img in \
+            hero-crystal.webp \
+            pink-stripes.webp \
+            cherry-blossom.webp \
+            orange-stiletto.webp \
+            hello-kitty.webp \
+            blue-bows.webp \
+            red-floral.webp \
+            red-black.webp \
+            mani-pedi.webp; do
+            test -s "assets/images/$img"
+            python3 - "$img" <<'PY'
+import pathlib, sys
+p = pathlib.Path("assets/images") / sys.argv[1]
+b = p.read_bytes()
+assert len(b) > 100, f"{p} is empty or truncated"
+assert b[:4] == b"RIFF" and b[8:12] == b"WEBP", f"{p} is not a valid WebP container"
+print(f"OK {p} ({len(b)} bytes)")
+PY
+          done
+
   deploy:
     needs: validate
     environment:
@@ -29,6 +67,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Restore encoded production images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          shopt -s nullglob
+          for f in assets/encoded/*.b64; do
+            name="$(basename "$f" .b64)"
+            base64 --decode "$f" > "assets/images/${name}.webp"
+          done
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
