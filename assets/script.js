@@ -56,6 +56,57 @@
     const copyright = footer.querySelector('.copyright');
     footer.insertBefore(legal, copyright || null);
   }
+
+  // Use the logo once as the primary brand mark. Replace repeat-logo areas with work.
+  const duplicateHiringLogo = document.querySelector('#careers .careers-card > .brand-image');
+  duplicateHiringLogo?.remove();
+
+  const footerBrand = document.querySelector('.footer-brand');
+  if (footerBrand) {
+    footerBrand.querySelector('.brand-image')?.remove();
+    if (!footerBrand.querySelector('.footer-wordmark')) {
+      const wordmark = document.createElement('div');
+      wordmark.className = 'footer-wordmark';
+      wordmark.innerHTML = '<strong>Joyful Expressions</strong><span>Nails & Waxing</span>';
+      footerBrand.prepend(wordmark);
+    }
+  }
+
+  const logoCard = document.querySelector('.visit-logo');
+  if (logoCard) {
+    logoCard.classList.add('visit-gallery-card');
+    logoCard.innerHTML = `
+      <figure class="mini-nail main-shot">
+        <img src="assets/images/lavender-3d-800.webp?v=originals2" srcset="assets/images/lavender-3d-480.webp?v=originals2 480w, assets/images/lavender-3d-800.webp?v=originals2 800w" sizes="(max-width:650px) 58vw, 330px" width="800" height="933" alt="Lavender 3D flower and crystal nail set" loading="lazy" decoding="async">
+      </figure>
+      <figure class="mini-nail side-shot top-shot">
+        <img src="assets/images/ladybug-french-480.webp?v=originals2" width="480" height="543" alt="Ladybug and daisy French nail set" loading="lazy" decoding="async">
+      </figure>
+      <figure class="mini-nail side-shot bottom-shot">
+        <img src="assets/images/hibiscus-french-480.webp?v=originals2" width="480" height="559" alt="Red hibiscus French nail art" loading="lazy" decoding="async">
+      </figure>
+      <div class="work-card-label"><span>More Joyful work</span><strong>Every set has its own mood.</strong><a href="#gallery">View full gallery →</a></div>`;
+  }
+
+  const cardStyles = document.createElement('style');
+  cardStyles.textContent = `
+    .visit-gallery-card{position:relative;display:grid!important;grid-template-columns:1.35fr .85fr;grid-template-rows:1fr 1fr;gap:10px;min-height:430px!important;padding:10px!important;background:#f2cfdd!important;overflow:hidden}
+    .visit-gallery-card .mini-nail{margin:0;overflow:hidden;border-radius:18px;background:#ead1dc;min-width:0;min-height:0}
+    .visit-gallery-card .main-shot{grid-row:1/3}
+    .visit-gallery-card .mini-nail img{width:100%;height:100%;object-fit:cover;display:block}
+    .visit-gallery-card .main-shot img{object-position:center 48%}
+    .visit-gallery-card .top-shot img{object-position:center 40%}
+    .visit-gallery-card .bottom-shot img{object-position:center 45%}
+    .visit-gallery-card .work-card-label{position:absolute;left:24px;bottom:24px;max-width:245px;padding:15px 17px;border-radius:17px;background:rgba(255,248,251,.92);box-shadow:0 12px 35px rgba(72,24,48,.16);backdrop-filter:blur(12px);color:#2b1721}
+    .visit-gallery-card .work-card-label span{display:block;color:#a41152;text-transform:uppercase;letter-spacing:.16em;font-size:9px;font-weight:900}
+    .visit-gallery-card .work-card-label strong{display:block;font:600 19px/1.12 Georgia,serif;margin:5px 0 9px}
+    .visit-gallery-card .work-card-label a{font-size:11px;font-weight:800;color:#7d244f}
+    .footer-wordmark{margin-bottom:13px}.footer-wordmark strong{display:block;font:italic 700 30px/1 Georgia,serif;color:#9d1855}.footer-wordmark span{display:block;margin-top:7px;text-transform:uppercase;letter-spacing:.17em;font-size:9px;font-weight:800;color:#684052}
+    #careers .careers-card{padding-top:4px}
+    @media(max-width:650px){.visit-gallery-card{min-height:330px!important;grid-template-columns:1.2fr .8fr}.visit-gallery-card .work-card-label{left:18px;bottom:18px;max-width:205px;padding:12px 14px}.visit-gallery-card .work-card-label strong{font-size:16px}}
+  `;
+  document.head.appendChild(cardStyles);
+
   // The owner asked for the hiring callout to be the last promotional block.
   const careers = document.querySelector('#careers');
   const visit = document.querySelector('#visit');
