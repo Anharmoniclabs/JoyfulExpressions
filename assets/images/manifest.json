@@ -1,0 +1,452 @@
+[
+  {
+    "name": "logo",
+    "source_sha256": "bec2c0d9e3e04965c5439641db83382aa17e7bb853d9a06b56f85b62fc293291",
+    "source_width": 2048,
+    "source_height": 1524,
+    "variants": [
+      {
+        "path": "assets/images/logo.webp",
+        "width": 2048,
+        "height": 1524,
+        "sha256": "406bdaead780bad63051ce3eedb54d976afef18aa293c383efcf78fc0e53f303",
+        "bytes": 990752
+      }
+    ]
+  },
+  {
+    "name": "red-black",
+    "source_sha256": "a0c6131840f038ed8511e3025e2473b8bd087a7daef32ff010b28e070a6dc1a3",
+    "source_width": 1320,
+    "source_height": 1521,
+    "variants": [
+      {
+        "path": "assets/images/red-black-480.webp",
+        "width": 480,
+        "height": 553,
+        "sha256": "a546a30002beb612efb021fd8b094419438c1b394b9618f8deabbe7679c742a2",
+        "bytes": 41910
+      },
+      {
+        "path": "assets/images/red-black-800.webp",
+        "width": 800,
+        "height": 922,
+        "sha256": "feb18510150a8fb8d4cfc58a739f09375f4331ca52e701bf773638e3ae2802ae",
+        "bytes": 79774
+      },
+      {
+        "path": "assets/images/red-black.webp",
+        "width": 1320,
+        "height": 1521,
+        "sha256": "f869cc84f7015c273878938f5dd03eff0f5d5380e8e8b6777bc7ae20f900c703",
+        "bytes": 161722
+      }
+    ]
+  },
+  {
+    "name": "lavender-3d",
+    "source_sha256": "4e4b0c79b4fda639fc236fb333037e4051ca7841b69c9e70e6ea1ed6af77b720",
+    "source_width": 1320,
+    "source_height": 1540,
+    "variants": [
+      {
+        "path": "assets/images/lavender-3d-480.webp",
+        "width": 480,
+        "height": 560,
+        "sha256": "e397f8824d1c0f4dfe0f66986a18975b83ec6fec07f86058b15f23aab22e5758",
+        "bytes": 45606
+      },
+      {
+        "path": "assets/images/lavender-3d-800.webp",
+        "width": 800,
+        "height": 933,
+        "sha256": "ada9a714e86b3c2f863ed8f05da02729496ce6dd954646b1d114bbf5cd930aa8",
+        "bytes": 91142
+      },
+      {
+        "path": "assets/images/lavender-3d.webp",
+        "width": 1320,
+        "height": 1540,
+        "sha256": "fe7022d3bbe91dbebc25761dfe8c548c4a1e90d02a5a686f164af393b43d84d2",
+        "bytes": 176984
+      }
+    ]
+  },
+  {
+    "name": "pastel-charms",
+    "source_sha256": "4fcb2eaf8ff37ade1fb2818f7af0157fe861e88377dc928d865155a33c07514f",
+    "source_width": 1320,
+    "source_height": 1059,
+    "variants": [
+      {
+        "path": "assets/images/pastel-charms-480.webp",
+        "width": 480,
+        "height": 385,
+        "sha256": "8e5d2be915004e1967def5b2271f90b76054632988241b02b60ff6cc23704a2a",
+        "bytes": 31374
+      },
+      {
+        "path": "assets/images/pastel-charms-800.webp",
+        "width": 800,
+        "height": 642,
+        "sha256": "da841df14b41a05412906929b09cd8d2fd7aabf3c0401031c715e6f73c91534c",
+        "bytes": 58658
+      },
+      {
+        "path": "assets/images/pastel-charms.webp",
+        "width": 1320,
+        "height": 1059,
+        "sha256": "76317642077651d8484388d4c02ed96e1e15f59405827f35bf7e204b9e737ac5",
+        "bytes": 109434
+      }
+    ]
+  },
+  {
+    "name": "white-floral",
+    "source_sha256": "fe1f98fadc879bb8b72f561451f309d7328e5e53ec77cda7f4333681081806f3",
+    "source_width": 1320,
+    "source_height": 1312,
+    "variants": [
+      {
+        "path": "assets/images/white-floral-480.webp",
+        "width": 480,
+        "height": 477,
+        "sha256": "2621195aa162279e36de9bbd16de03cc723c9e0b2b17cd92dcd9bcee5a05e383",
+        "bytes": 45588
+      },
+      {
+        "path": "assets/images/white-floral-800.webp",
+        "width": 800,
+        "height": 795,
+        "sha256": "1b5d903d2881e9a8b1d6485b1dd8cb7ad41766aecd9cfec72e316c67d3e7b079",
+        "bytes": 102338
+      },
+      {
+        "path": "assets/images/white-floral.webp",
+        "width": 1320,
+        "height": 1312,
+        "sha256": "2dc329222ab35c5eae8e20e434e956af64cfe472a6f53c2c5d56ed4729bf6434",
+        "bytes": 204160
+      }
+    ]
+  },
+  {
+    "name": "hibiscus-french",
+    "source_sha256": "c719adb426e76297813073d1964c28edccf10c95e37efc58ca2ae8b6474c9009",
+    "source_width": 1319,
+    "source_height": 1535,
+    "variants": [
+      {
+        "path": "assets/images/hibiscus-french-480.webp",
+        "width": 480,
+        "height": 559,
+        "sha256": "99726a79a7c3f89a6a383acde087f9978c27a323dc220a9b0698d02da78c1324",
+        "bytes": 36196
+      },
+      {
+        "path": "assets/images/hibiscus-french-800.webp",
+        "width": 800,
+        "height": 931,
+        "sha256": "3d73be9e04b5f4e4e7b6e5142a8d6094a3fa0d10df2ebe2af0d4af24a4ecd914",
+        "bytes": 71952
+      },
+      {
+        "path": "assets/images/hibiscus-french.webp",
+        "width": 1319,
+        "height": 1535,
+        "sha256": "eca18c0fff973f485ba9b5213ab05b58c046a380a23aa7ccb32acdc53c2b65c0",
+        "bytes": 151492
+      }
+    ]
+  },
+  {
+    "name": "burgundy-stiletto",
+    "source_sha256": "709ca76a274810149dd6449f15849941e605fcf99f7e5129221c670c2a51ed1a",
+    "source_width": 1320,
+    "source_height": 1522,
+    "variants": [
+      {
+        "path": "assets/images/burgundy-stiletto-480.webp",
+        "width": 480,
+        "height": 553,
+        "sha256": "f61897c3fab926020e2140b99b015a2cf16a0e47c7c35dc9024ad6996973b230",
+        "bytes": 33950
+      },
+      {
+        "path": "assets/images/burgundy-stiletto-800.webp",
+        "width": 800,
+        "height": 922,
+        "sha256": "ea3c132d0fa7a7fc15d76ed24db2d26ed6861b03da572463101f20087e68dbec",
+        "bytes": 72476
+      },
+      {
+        "path": "assets/images/burgundy-stiletto.webp",
+        "width": 1320,
+        "height": 1522,
+        "sha256": "c204bb0b8f9c2ead1004812746d116a28805ff5a1de1edd98f36bc98035a20b7",
+        "bytes": 146022
+      }
+    ]
+  },
+  {
+    "name": "ladybug-french",
+    "source_sha256": "70c3fb3e885805f4b67621671125a300ebfbb9322f5a1bca5c75a657a693b78d",
+    "source_width": 1320,
+    "source_height": 1493,
+    "variants": [
+      {
+        "path": "assets/images/ladybug-french-480.webp",
+        "width": 480,
+        "height": 543,
+        "sha256": "102df7f3770cc8ee1112619d7f4144d2421b91b699448acea3abb97311f33f57",
+        "bytes": 49094
+      },
+      {
+        "path": "assets/images/ladybug-french-800.webp",
+        "width": 800,
+        "height": 905,
+        "sha256": "073eace378fd88c64f8cd2bc7c8ac3fe795107df7d234861873b26f4255cfe49",
+        "bytes": 106414
+      },
+      {
+        "path": "assets/images/ladybug-french.webp",
+        "width": 1320,
+        "height": 1493,
+        "sha256": "155fe3cdf8d35d73edf258ef3f43fcf40ae544f756b3da206192a584c595c5a5",
+        "bytes": 199966
+      }
+    ]
+  },
+  {
+    "name": "hero-crystal",
+    "source_sha256": "d22c54432843a76ef328ac2099fff418b5635308bcd150c1165c69491cdb8ba0",
+    "source_width": 1320,
+    "source_height": 1420,
+    "variants": [
+      {
+        "path": "assets/images/hero-crystal-480.webp",
+        "width": 480,
+        "height": 516,
+        "sha256": "f6894d23d2bcc830562b7f8cf64ac503b6917b9807b349823aa968a64b0337bb",
+        "bytes": 42270
+      },
+      {
+        "path": "assets/images/hero-crystal-800.webp",
+        "width": 800,
+        "height": 861,
+        "sha256": "58721774a7d45da084257087e71596fb4fb5c394ce1b3f67dbbb85a0ce4a7337",
+        "bytes": 89144
+      },
+      {
+        "path": "assets/images/hero-crystal.webp",
+        "width": 1320,
+        "height": 1420,
+        "sha256": "a86affb7248a1877c0a0a6a7d8284f7b4478a64da0e497a92630de334dca9cf2",
+        "bytes": 179972
+      }
+    ]
+  },
+  {
+    "name": "cherry-blossom",
+    "source_sha256": "c7e00862f8e3787705e9745e603f29d1472ef40b7592d21e49ac103f623a65f4",
+    "source_width": 1320,
+    "source_height": 1618,
+    "variants": [
+      {
+        "path": "assets/images/cherry-blossom-480.webp",
+        "width": 480,
+        "height": 588,
+        "sha256": "d13cff28477aade7c804444df24939c6f361fd0209c69c6f4bb81c25cbc0a7da",
+        "bytes": 26668
+      },
+      {
+        "path": "assets/images/cherry-blossom-800.webp",
+        "width": 800,
+        "height": 981,
+        "sha256": "4aa65f31d6aab5fcc8427af3ef0a42188858b0ecfbde8212ea0e0c052b2ad950",
+        "bytes": 54894
+      },
+      {
+        "path": "assets/images/cherry-blossom.webp",
+        "width": 1320,
+        "height": 1618,
+        "sha256": "5f2b517b8b61262786bc0d57b6aff4746a2cdcff4160034a780cd552c3418849",
+        "bytes": 112880
+      }
+    ]
+  },
+  {
+    "name": "orange-stiletto",
+    "source_sha256": "f51e5937419d68e23825eb1c223795e5c96944c9096de69fde10c76e425556e0",
+    "source_width": 1320,
+    "source_height": 1569,
+    "variants": [
+      {
+        "path": "assets/images/orange-stiletto-480.webp",
+        "width": 480,
+        "height": 571,
+        "sha256": "a7a90b0fc9077527876b24efbe0d8b38559a97fa74ee36ac6f762082ff75b15b",
+        "bytes": 37118
+      },
+      {
+        "path": "assets/images/orange-stiletto-800.webp",
+        "width": 800,
+        "height": 951,
+        "sha256": "11cea1a3b22272d2b4f07d891bba3f0d26ca9f8eff8e1c0242cf593bf5426f21",
+        "bytes": 74244
+      },
+      {
+        "path": "assets/images/orange-stiletto.webp",
+        "width": 1320,
+        "height": 1569,
+        "sha256": "e0d60b4b48eeb3808ef0534f48dc8d263ba6d069aaa3bee8f8a8c94812865cf2",
+        "bytes": 143612
+      }
+    ]
+  },
+  {
+    "name": "blue-bows",
+    "source_sha256": "2b1c1c55f0b623dde610a9097b09e2194d7e9fda1fc069ebfb62ea9b4151bc9b",
+    "source_width": 1320,
+    "source_height": 1514,
+    "variants": [
+      {
+        "path": "assets/images/blue-bows-480.webp",
+        "width": 480,
+        "height": 551,
+        "sha256": "bd4c9f20c21917ade33b509fcb72af5dbfae4e7d2bdd7843a645f2069712d900",
+        "bytes": 33238
+      },
+      {
+        "path": "assets/images/blue-bows-800.webp",
+        "width": 800,
+        "height": 918,
+        "sha256": "1fa163c61ad79083280ef922c509c722a51c4e69b9388082f3dea643e7ed27bc",
+        "bytes": 62860
+      },
+      {
+        "path": "assets/images/blue-bows.webp",
+        "width": 1320,
+        "height": 1514,
+        "sha256": "7d390a8977c5b403318f78fdfe5779cece31edbf2c6b6dd1f1b19ee4f05046d7",
+        "bytes": 129328
+      }
+    ]
+  },
+  {
+    "name": "hello-kitty",
+    "source_sha256": "4dbf56ef68ecc3c189d669e567034b25b7b9e84ed2e358431f6d8c25cbf250ff",
+    "source_width": 1320,
+    "source_height": 1307,
+    "variants": [
+      {
+        "path": "assets/images/hello-kitty-480.webp",
+        "width": 480,
+        "height": 475,
+        "sha256": "8f38a29c3f59f8a04c8d437ea8a026b97efd6ac4b26ecb7705b10e8adf458778",
+        "bytes": 34678
+      },
+      {
+        "path": "assets/images/hello-kitty-800.webp",
+        "width": 800,
+        "height": 792,
+        "sha256": "1f5eb893f107c7e84a0b8be3dea0a7b67f69542c492cee60458a9bcdb3e47b7b",
+        "bytes": 68846
+      },
+      {
+        "path": "assets/images/hello-kitty.webp",
+        "width": 1320,
+        "height": 1307,
+        "sha256": "4c6aec4db0dc69db98f9f527e7699380c5070ada2aafd3da4caf745a7b522272",
+        "bytes": 136580
+      }
+    ]
+  },
+  {
+    "name": "mani-pedi",
+    "source_sha256": "27b1abb4f3af8951ff38b2e64cfdb44b470a96748d0994f91d58fc0548673a91",
+    "source_width": 1320,
+    "source_height": 1615,
+    "variants": [
+      {
+        "path": "assets/images/mani-pedi-480.webp",
+        "width": 480,
+        "height": 587,
+        "sha256": "a138521d0a86b2eaeb2a099c1a6cd7fb056653116e8240df50b75148b1e6ee9e",
+        "bytes": 72272
+      },
+      {
+        "path": "assets/images/mani-pedi-800.webp",
+        "width": 800,
+        "height": 979,
+        "sha256": "0c1358cbced6e672efce83b8c8adcc8ae9c8dc8f3f72209b439da0bc70609434",
+        "bytes": 141788
+      },
+      {
+        "path": "assets/images/mani-pedi.webp",
+        "width": 1320,
+        "height": 1615,
+        "sha256": "1a44cd260cf1fef588a0ae34fb42cb501bcca7d177b90e0f7c649f81a1222fb0",
+        "bytes": 245090
+      }
+    ]
+  },
+  {
+    "name": "pink-stripes",
+    "source_sha256": "d1d13c9e4f491f0c08e7e586bad6a430da24b54f8bd406bfd44100c402b8d515",
+    "source_width": 1320,
+    "source_height": 1529,
+    "variants": [
+      {
+        "path": "assets/images/pink-stripes-480.webp",
+        "width": 480,
+        "height": 556,
+        "sha256": "52c9eb7c19b1950e023a90558c7a54f6fba0cfd6202d808f51d0676856f05575",
+        "bytes": 42398
+      },
+      {
+        "path": "assets/images/pink-stripes-800.webp",
+        "width": 800,
+        "height": 927,
+        "sha256": "a4ea5689de35eb4c43e4855a47f21850291382a79d2c9e230490201ff8d21029",
+        "bytes": 91476
+      },
+      {
+        "path": "assets/images/pink-stripes.webp",
+        "width": 1320,
+        "height": 1529,
+        "sha256": "e717cc6131e6b9df3cf88ecd7e71ca6413e548244c730f446be60bc15c33fad8",
+        "bytes": 187300
+      }
+    ]
+  },
+  {
+    "name": "red-floral",
+    "source_sha256": "181bdec2e0312b88b3d175020ff6f03ef7fab5647b5b3ca9e43e8c3ff7f829d9",
+    "source_width": 1320,
+    "source_height": 1607,
+    "variants": [
+      {
+        "path": "assets/images/red-floral-480.webp",
+        "width": 480,
+        "height": 584,
+        "sha256": "8f0c2aa95e7f7bb73a9123788bad867170d7b8610f0f7debdd4aa6193f77d435",
+        "bytes": 31426
+      },
+      {
+        "path": "assets/images/red-floral-800.webp",
+        "width": 800,
+        "height": 974,
+        "sha256": "ad1f6a95cc01c4504412011cf83c0da6216f1d1ef7b1235e1f48849466a63cf7",
+        "bytes": 63734
+      },
+      {
+        "path": "assets/images/red-floral.webp",
+        "width": 1320,
+        "height": 1607,
+        "sha256": "a1254fec4effa1e60e3206588848aa0d0161599f7ad17ab76af84d8e6aed3235",
+        "bytes": 129678
+      }
+    ]
+  }
+]
