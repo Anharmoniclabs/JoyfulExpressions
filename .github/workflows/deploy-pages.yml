@@ -1,72 +1,54 @@
-name: Deploy Joyful Expressions to GitHub Pages
-
+name: Validate and deploy Joyful Expressions
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
-
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
-
-      - name: Restore encoded production images
-        shell: bash
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Fully decode images, check hashes, dimensions and links
+        run: python scripts/validate_site.py
+      - run: node --check assets/script.js
+      - name: Package only the public website
         run: |
-          set -euo pipefail
-          mkdir -p assets/images
-          shopt -s nullglob
-          for f in assets/encoded/*.b64; do
-            name="$(basename "$f" .b64)"
-            base64 --decode "$f" > "assets/images/${name}.webp"
-          done
-
-      - name: Validate production site and every required image
-        shell: bash
-        run: |
-          set -euo pipefail
-          test -f index.html
-          test -f assets/styles.css
-          test -f assets/script.js
-          for img in hero-crystal.webp pink-stripes.webp cherry-blossom.webp orange-stiletto.webp hello-kitty.webp blue-bows.webp red-floral.webp red-black.webp mani-pedi.webp; do
-            test -s "assets/images/$img"
-            python3 -c 'import pathlib,sys; p=pathlib.Path("assets/images")/sys.argv[1]; b=p.read_bytes(); assert len(b)>100; assert b[:4]==b"RIFF" and b[8:12]==b"WEBP"; print(f"OK {p} ({len(b)} bytes)")' "$img"
-          done
-
+          mkdir -p _site/assets
+          cp index.html robots.txt sitemap.xml _site/
+          cp assets/styles.css assets/refined.css assets/script.js assets/favicon.svg _site/assets/
+          cp -r assets/images _site/assets/
+          rm -f _site/assets/images/manifest.json
+          touch _site/.nojekyll
+          if [ -f CNAME ]; then cp CNAME _site/; fi
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: _site
   deploy:
+    if: github.event_name != 'pull_request'
     needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Restore encoded production images
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p assets/images
-          shopt -s nullglob
-          for f in assets/encoded/*.b64; do
-            name="$(basename "$f" .b64)"
-            base64 --decode "$f" > "assets/images/${name}.webp"
-          done
-
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v4
         id: deployment
-        uses: actions/deploy-pages@v4
