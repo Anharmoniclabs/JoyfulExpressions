@@ -4,6 +4,41 @@
   const toggle = document.querySelector('.nav-toggle');
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Never show broken logo icons. Until the binary logo asset is committed,
+  // render a polished wordmark fallback that matches the Joyful aesthetic.
+  const fallbackStyle = document.createElement('style');
+  fallbackStyle.textContent = `
+    .joyful-wordmark{display:inline-flex;flex-direction:column;line-height:.84;color:#fff;text-shadow:0 8px 24px rgba(0,0,0,.35)}
+    .joyful-wordmark .joyful-script{font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(28px,4vw,58px);color:#ff4d97;letter-spacing:-.055em}
+    .joyful-wordmark .joyful-expressions{font-size:9px;font-weight:900;letter-spacing:.42em;text-transform:uppercase;margin-top:8px;color:#fff}
+    .brand .joyful-wordmark .joyful-script{font-size:30px}
+    .brand .joyful-wordmark .joyful-expressions{font-size:7px;letter-spacing:.28em;margin-top:4px}
+    .footer-brand .joyful-wordmark .joyful-script,.careers-card .joyful-wordmark .joyful-script,.visit-logo .joyful-wordmark .joyful-script{font-size:46px}
+    .visit-logo .joyful-wordmark{align-items:center;text-align:center}
+  `;
+  document.head.appendChild(fallbackStyle);
+
+  const makeWordmark = () => {
+    const span = document.createElement('span');
+    span.className = 'joyful-wordmark';
+    span.innerHTML = '<span class="joyful-script">Joyful</span><span class="joyful-expressions">Expressions</span>';
+    return span;
+  };
+
+  document.querySelectorAll('img[src$="logo.webp"]').forEach(img => {
+    const replace = () => img.replaceWith(makeWordmark());
+    img.addEventListener('error', replace, { once: true });
+    if (img.complete && img.naturalWidth === 0) replace();
+  });
+
+  // Hero fallback: prefer the red/black set, but never leave a blank hero.
+  const heroMedia = document.querySelector('.hero-media');
+  if (heroMedia) {
+    const probe = new Image();
+    probe.onerror = () => { heroMedia.style.backgroundImage = "url('assets/images/hero-crystal.webp')"; };
+    probe.src = 'assets/images/red-black.webp';
+  }
+
   const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 35);
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
