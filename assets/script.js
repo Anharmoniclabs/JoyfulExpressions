@@ -25,6 +25,44 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
     }
   });
+
+  // Client-final business identity and presentation.
+  const LEGAL_NAME = 'JOYFUL EXPRESSIONS NAILS & WAXING INC.';
+  const LEGAL_STREET = '2302 MERMAID AVE #3';
+  const LEGAL_CITY = 'BROOKLYN, NY 11224-2208';
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f7dce6');
+  const structured = document.querySelector('script[type="application/ld+json"]');
+  if (structured) {
+    try {
+      const data = JSON.parse(structured.textContent);
+      data.legalName = LEGAL_NAME;
+      data.address = {
+        '@type': 'PostalAddress',
+        streetAddress: LEGAL_STREET,
+        addressLocality: 'Brooklyn',
+        addressRegion: 'NY',
+        postalCode: '11224-2208',
+        addressCountry: 'US'
+      };
+      structured.textContent = JSON.stringify(data);
+    } catch (_) { /* keep the existing valid structured data if parsing ever changes */ }
+  }
+  const footer = document.querySelector('.footer');
+  if (footer && !footer.querySelector('.legal-business')) {
+    const legal = document.createElement('div');
+    legal.className = 'legal-business';
+    legal.setAttribute('aria-label', 'Legal business information');
+    legal.innerHTML = `<strong>${LEGAL_NAME}</strong><span>${LEGAL_STREET}</span><span>${LEGAL_CITY}</span>`;
+    const copyright = footer.querySelector('.copyright');
+    footer.insertBefore(legal, copyright || null);
+  }
+  // The owner asked for the hiring callout to be the last promotional block.
+  const careers = document.querySelector('#careers');
+  const visit = document.querySelector('#visit');
+  if (careers && visit && careers.compareDocumentPosition(visit) & Node.DOCUMENT_POSITION_FOLLOWING) {
+    visit.after(careers);
+  }
+
   // Photo movement is small, bounded, integer-pixel, and disabled for touch/reduced motion.
   const motion = matchMedia('(min-width: 1001px) and (pointer: fine)');
   const photos = [...document.querySelectorAll('[data-parallax]')];
