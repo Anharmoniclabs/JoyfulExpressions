@@ -38,25 +38,9 @@ jobs:
           test -f index.html
           test -f assets/styles.css
           test -f assets/script.js
-          for img in \
-            hero-crystal.webp \
-            pink-stripes.webp \
-            cherry-blossom.webp \
-            orange-stiletto.webp \
-            hello-kitty.webp \
-            blue-bows.webp \
-            red-floral.webp \
-            red-black.webp \
-            mani-pedi.webp; do
+          for img in hero-crystal.webp pink-stripes.webp cherry-blossom.webp orange-stiletto.webp hello-kitty.webp blue-bows.webp red-floral.webp red-black.webp mani-pedi.webp; do
             test -s "assets/images/$img"
-            python3 - "$img" <<'PY'
-import pathlib, sys
-p = pathlib.Path("assets/images") / sys.argv[1]
-b = p.read_bytes()
-assert len(b) > 100, f"{p} is empty or truncated"
-assert b[:4] == b"RIFF" and b[8:12] == b"WEBP", f"{p} is not a valid WebP container"
-print(f"OK {p} ({len(b)} bytes)")
-PY
+            python3 -c 'import pathlib,sys; p=pathlib.Path("assets/images")/sys.argv[1]; b=p.read_bytes(); assert len(b)>100; assert b[:4]==b"RIFF" and b[8:12]==b"WEBP"; print(f"OK {p} ({len(b)} bytes)")' "$img"
           done
 
   deploy:
