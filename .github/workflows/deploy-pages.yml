@@ -34,7 +34,7 @@ jobs:
           rm -f _site/assets/images/manifest.json
           touch _site/.nojekyll
           if [ -f CNAME ]; then cp CNAME _site/; fi
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         if: github.event_name != 'pull_request'
         with:
           path: _site
