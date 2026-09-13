@@ -11,6 +11,7 @@
   --salon-ink:#302d30;
   --salon-hot:#e91c73;
   --salon-hot-dark:#b70d57;
+  --school-art:url('https://d2ol7oe51mr4n9.cloudfront.net/user_3BN6e9xn2X4STcw4FAYAt0XmfjE/9a63fd69-a4b9-4dae-ad07-d589c3b55fe5.png');
 }
 body{background:var(--salon-pink-pale)!important;color:var(--salon-ink)!important}
 .site-header,.site-header.scrolled{background:rgba(241,221,229,.97)!important;color:var(--salon-ink)!important;border-bottom:1px solid #d6b7c2!important;box-shadow:0 8px 28px rgba(91,61,74,.10)!important;backdrop-filter:blur(16px)}
@@ -21,10 +22,21 @@ body{background:var(--salon-pink-pale)!important;color:var(--salon-ink)!importan
 .services{background:var(--salon-pink-pale)!important}.gallery{background:var(--salon-white)!important}.policy{background:var(--salon-gray-soft)!important}.visit{background:var(--salon-pink-soft)!important}.specials{background:var(--salon-pink-soft)!important;color:var(--salon-ink)!important}
 .section-head .eyebrow,.specials .eyebrow{color:var(--salon-hot-dark)!important}.section-head>p,.specials .section-head>p,.small-print,.gallery-footnote{color:#6d686c!important}
 .service-card,.policy-grid>div,.natural-card,.photo-caption{background:var(--salon-white)!important;border-color:#d8c9ce!important}.service-card:nth-child(even){background:#efe5e8!important}.service-card h3,.policy-grid strong{color:var(--salon-gray-deep)!important}.natural-card:hover{border-color:var(--salon-hot)!important}.photo-caption{color:var(--salon-gray-deep)!important}.photo-caption>span:last-child{color:var(--salon-hot-dark)!important}
-.special-card.school{background:linear-gradient(125deg,#a97c8a,#c99faa 52%,#79767a)!important;color:#fff!important}.special-card.school a{background:var(--salon-white)!important;color:var(--salon-gray-deep)!important}.special-card.october{background:linear-gradient(135deg,#625f63,#8a737c 58%,#b48d9b)!important;color:#fff!important}.schedule-note{color:#6d686c!important}
+
+/* September $29.99 banner: centered artwork with a soft blurred echo into the salon-pink field. */
+.special-grid{display:grid!important;grid-template-columns:1fr!important}
+.special-card.school{position:relative!important;isolation:isolate;display:grid!important;place-items:center;min-height:clamp(430px,52vw,760px)!important;max-width:1180px;margin-inline:auto;padding:0!important;overflow:hidden;border:1px solid rgba(183,13,87,.13);border-radius:30px!important;background:linear-gradient(135deg,#f2dce4 0%,#ead7dd 48%,#f7edf1 100%)!important;box-shadow:0 28px 70px rgba(101,72,86,.16)!important}
+.special-card.school::before{content:"";position:absolute;inset:-42px;z-index:0;background-image:linear-gradient(rgba(242,220,228,.32),rgba(242,220,228,.32)),var(--school-art);background-position:center;background-size:cover;filter:blur(28px) saturate(.9);opacity:.58;transform:scale(1.12)}
+.special-card.school::after{content:"";position:absolute;inset:28px 36px 74px;z-index:1;background-image:var(--school-art);background-position:center;background-repeat:no-repeat;background-size:contain;filter:drop-shadow(0 16px 34px rgba(81,55,68,.18))}
+.special-card.school>span,.special-card.school>h3,.special-card.school>.price,.special-card.school>p{opacity:0!important;pointer-events:none!important;user-select:none!important}
+.special-card.school>a{position:absolute;z-index:3;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex!important;align-items:center;justify-content:center;min-height:46px;padding:0 22px!important;border-radius:999px!important;background:var(--salon-hot)!important;color:#fff!important;box-shadow:0 12px 28px rgba(183,13,87,.2);white-space:nowrap}
+.special-card.school>a:hover{background:var(--salon-hot-dark)!important}
+.special-card.october{background:linear-gradient(135deg,#625f63,#8a737c 58%,#b48d9b)!important;color:#fff!important}.schedule-note{color:#6d686c!important}
+
 .visit-gallery-card{background:var(--salon-gray-soft)!important}.visit-gallery-card .mini-nail{background:#c7c3c5!important}.visit-gallery-card .work-card-label{background:rgba(251,250,248,.94)!important;color:var(--salon-ink)!important;box-shadow:0 12px 35px rgba(70,67,70,.16)!important}.visit-gallery-card .work-card-label span{color:var(--salon-hot-dark)!important}.visit-gallery-card .work-card-label a{color:var(--salon-gray-deep)!important}
 .careers{background:linear-gradient(135deg,var(--salon-gray) 0%,#898488 48%,var(--salon-pink) 100%)!important;color:#fff!important;border-top:1px solid #aaa5a8!important}.careers-card h2,.careers-card>p:not(.eyebrow){color:#fff!important}.careers-card .eyebrow{color:#ffe5ef!important}.careers .light{background:var(--salon-hot)!important;color:#fff!important}.careers-visual img{border-color:#d9c2ca!important;box-shadow:0 24px 60px rgba(52,49,51,.25)!important}
 .footer{background:var(--salon-gray)!important;color:#fff!important;border-top:1px solid #969296!important}.footer a,.footer p{color:#f9f7f5!important}.footer h3{color:#fff!important}.footer-wordmark strong{color:#fff!important}.footer-wordmark span{color:#f2dce4!important}.legal-business{background:rgba(251,250,248,.12)!important;border-color:rgba(255,255,255,.35)!important;color:#f7f3f4!important}.legal-business strong{color:#fff!important}.copyright{border-top-color:rgba(255,255,255,.24)!important}
 .mobile-cta{background:rgba(79,77,81,.96)!important}.mobile-cta .book{background:var(--salon-hot)!important}
 .button.primary{background:var(--salon-hot)!important}.outline-dark{border-color:var(--salon-gray-deep)!important;color:var(--salon-gray-deep)!important}
 @media(max-width:1000px){.site-nav{background:var(--salon-powder)!important;color:var(--salon-ink)!important}.site-nav a:not(.nav-book){color:var(--salon-ink)!important}}
+@media(max-width:650px){.special-card.school{min-height:500px!important;border-radius:22px!important}.special-card.school::before{inset:-28px;filter:blur(22px)}.special-card.school::after{inset:18px 14px 72px}.special-card.school>a{bottom:16px;min-height:44px}}
