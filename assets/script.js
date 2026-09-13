@@ -1,5 +1,10 @@
 (() => {
   'use strict';
+  const salonPalette = document.createElement('link');
+  salonPalette.rel = 'stylesheet';
+  salonPalette.href = 'assets/salon-palette.css?v=salon-gray-pink-1';
+  document.head.appendChild(salonPalette);
+
   const header = document.querySelector('.site-header');
   const nav = document.querySelector('.site-nav');
   const toggle = document.querySelector('.nav-toggle');
@@ -30,7 +35,7 @@
   const LEGAL_NAME = 'JOYFUL EXPRESSIONS NAILS & WAXING INC.';
   const LEGAL_STREET = '2302 MERMAID AVE #3';
   const LEGAL_CITY = 'BROOKLYN, NY 11224-2208';
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f7dce6');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#727074');
   const structured = document.querySelector('script[type="application/ld+json"]');
   if (structured) {
     try {
@@ -90,18 +95,18 @@
 
   const cardStyles = document.createElement('style');
   cardStyles.textContent = `
-    .visit-gallery-card{position:relative;display:grid!important;grid-template-columns:1.35fr .85fr;grid-template-rows:1fr 1fr;gap:10px;min-height:430px!important;padding:10px!important;background:#f2cfdd!important;overflow:hidden}
-    .visit-gallery-card .mini-nail{margin:0;overflow:hidden;border-radius:18px;background:#ead1dc;min-width:0;min-height:0}
+    .visit-gallery-card{position:relative;display:grid!important;grid-template-columns:1.35fr .85fr;grid-template-rows:1fr 1fr;gap:10px;min-height:430px!important;padding:10px!important;background:#d8d5d6!important;overflow:hidden}
+    .visit-gallery-card .mini-nail{margin:0;overflow:hidden;border-radius:18px;background:#c9c5c7;min-width:0;min-height:0}
     .visit-gallery-card .main-shot{grid-row:1/3}
     .visit-gallery-card .mini-nail img{width:100%;height:100%;object-fit:cover;display:block}
     .visit-gallery-card .main-shot img{object-position:center 48%}
     .visit-gallery-card .top-shot img{object-position:center 40%}
     .visit-gallery-card .bottom-shot img{object-position:center 45%}
-    .visit-gallery-card .work-card-label{position:absolute;left:24px;bottom:24px;max-width:245px;padding:15px 17px;border-radius:17px;background:rgba(255,248,251,.92);box-shadow:0 12px 35px rgba(72,24,48,.16);backdrop-filter:blur(12px);color:#2b1721}
-    .visit-gallery-card .work-card-label span{display:block;color:#a41152;text-transform:uppercase;letter-spacing:.16em;font-size:9px;font-weight:900}
+    .visit-gallery-card .work-card-label{position:absolute;left:24px;bottom:24px;max-width:245px;padding:15px 17px;border-radius:17px;background:rgba(251,250,248,.94);box-shadow:0 12px 35px rgba(72,70,72,.16);backdrop-filter:blur(12px);color:#302d30}
+    .visit-gallery-card .work-card-label span{display:block;color:#b70d57;text-transform:uppercase;letter-spacing:.16em;font-size:9px;font-weight:900}
     .visit-gallery-card .work-card-label strong{display:block;font:600 19px/1.12 Georgia,serif;margin:5px 0 9px}
-    .visit-gallery-card .work-card-label a{font-size:11px;font-weight:800;color:#7d244f}
-    .footer-wordmark{margin-bottom:13px}.footer-wordmark strong{display:block;font:italic 700 30px/1 Georgia,serif;color:#9d1855}.footer-wordmark span{display:block;margin-top:7px;text-transform:uppercase;letter-spacing:.17em;font-size:9px;font-weight:800;color:#684052}
+    .visit-gallery-card .work-card-label a{font-size:11px;font-weight:800;color:#4f4d51}
+    .footer-wordmark{margin-bottom:13px}.footer-wordmark strong{display:block;font:italic 700 30px/1 Georgia,serif;color:#fff}.footer-wordmark span{display:block;margin-top:7px;text-transform:uppercase;letter-spacing:.17em;font-size:9px;font-weight:800;color:#f1dfe5}
     #careers .careers-card{padding-top:4px}
     @media(max-width:650px){.visit-gallery-card{min-height:330px!important;grid-template-columns:1.2fr .8fr}.visit-gallery-card .work-card-label{left:18px;bottom:18px;max-width:205px;padding:12px 14px}.visit-gallery-card .work-card-label strong{font-size:16px}}
   `;
