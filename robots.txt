@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://joyfulnails.tech/sitemap.xml
