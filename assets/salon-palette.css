@@ -1,0 +1,29 @@
+/* Palette derived from the physical salon: dusty pink walls, warm gray furnishings, soft white surfaces. The salon interior photo is NOT displayed on the site. */
+:root{
+  --salon-pink:#c9a4af;
+  --salon-pink-soft:#ead7dd;
+  --salon-pink-pale:#f5e9ed;
+  --salon-gray:#727074;
+  --salon-gray-deep:#4f4d51;
+  --salon-gray-soft:#d8d5d6;
+  --salon-white:#fbfaf8;
+  --salon-ink:#302d30;
+  --salon-hot:#e91c73;
+  --salon-hot-dark:#b70d57;
+}
+body{background:var(--salon-pink-pale)!important;color:var(--salon-ink)!important}
+.site-header,.site-header.scrolled{background:rgba(114,112,116,.97)!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.25)!important;box-shadow:0 8px 28px rgba(47,44,48,.12)!important}
+.site-header .site-nav a:not(.nav-book){color:#fff!important}.nav-toggle{color:#fff!important}.nav-toggle span{background:#fff!important}.site-nav .nav-book{background:linear-gradient(135deg,var(--salon-hot),var(--salon-hot-dark))!important;color:#fff!important}
+.hero-refined{background:radial-gradient(ellipse at 77% 25%,rgba(251,250,248,.84),transparent 54%),linear-gradient(135deg,var(--salon-pink-soft) 0%,var(--salon-white) 58%,var(--salon-gray-soft) 100%)!important;color:var(--salon-ink)!important}
+.hero-refined h1{color:var(--salon-ink)!important}.hero-refined h1 em{color:var(--salon-hot)!important}.hero-refined .eyebrow{color:var(--salon-gray-deep)!important}.hero-refined .hero-lede{color:#5d595d!important}.hero-refined .ghost{border-color:var(--salon-gray)!important;color:var(--salon-gray-deep)!important;background:rgba(251,250,248,.64)!important}.hero-actions .primary{background:linear-gradient(130deg,var(--salon-hot),var(--salon-hot-dark))!important}.hero-phone{color:var(--salon-gray-deep)!important}.hero-location{color:#746f73!important}.hero-photo img{border-color:#b7949f!important;box-shadow:0 28px 60px rgba(80,72,77,.22)!important}.hero-photo figcaption,.hero-photo figcaption a{color:var(--salon-gray-deep)!important}.hero-photo figcaption a{border-color:var(--salon-pink)!important}
+.studio-strip{background:var(--salon-white)!important;border-color:#d2b9c1!important}.studio-strip>div{border-color:#d8c4ca!important}.studio-strip strong{color:var(--salon-gray-deep)!important}.studio-strip span{color:#777176!important}
+.services{background:var(--salon-pink-pale)!important}.gallery{background:var(--salon-white)!important}.policy{background:var(--salon-gray-soft)!important}.visit{background:var(--salon-pink-soft)!important}.specials{background:var(--salon-pink-soft)!important;color:var(--salon-ink)!important}
+.section-head .eyebrow,.specials .eyebrow{color:var(--salon-hot-dark)!important}.section-head>p,.specials .section-head>p,.small-print,.gallery-footnote{color:#6d686c!important}
+.service-card,.policy-grid>div,.natural-card,.photo-caption{background:var(--salon-white)!important;border-color:#d8c9ce!important}.service-card:nth-child(even){background:#efe5e8!important}.service-card h3,.policy-grid strong{color:var(--salon-gray-deep)!important}.natural-card:hover{border-color:var(--salon-hot)!important}.photo-caption{color:var(--salon-gray-deep)!important}.photo-caption>span:last-child{color:var(--salon-hot-dark)!important}
+.special-card.school{background:linear-gradient(125deg,#a97c8a,#c99faa 52%,#79767a)!important;color:#fff!important}.special-card.school a{background:var(--salon-white)!important;color:var(--salon-gray-deep)!important}.special-card.october{background:linear-gradient(135deg,#625f63,#8a737c 58%,#b48d9b)!important;color:#fff!important}.schedule-note{color:#6d686c!important}
+.visit-gallery-card{background:var(--salon-gray-soft)!important}.visit-gallery-card .mini-nail{background:#c7c3c5!important}.visit-gallery-card .work-card-label{background:rgba(251,250,248,.94)!important;color:var(--salon-ink)!important;box-shadow:0 12px 35px rgba(70,67,70,.16)!important}.visit-gallery-card .work-card-label span{color:var(--salon-hot-dark)!important}.visit-gallery-card .work-card-label a{color:var(--salon-gray-deep)!important}
+.careers{background:linear-gradient(135deg,var(--salon-gray) 0%,#898488 48%,var(--salon-pink) 100%)!important;color:#fff!important;border-top:1px solid #aaa5a8!important}.careers-card h2,.careers-card>p:not(.eyebrow){color:#fff!important}.careers-card .eyebrow{color:#ffe5ef!important}.careers .light{background:var(--salon-hot)!important;color:#fff!important}.careers-visual img{border-color:#d9c2ca!important;box-shadow:0 24px 60px rgba(52,49,51,.25)!important}
+.footer{background:var(--salon-gray)!important;color:#fff!important;border-top:1px solid #969296!important}.footer a,.footer p{color:#f9f7f5!important}.footer h3{color:#fff!important}.footer-wordmark strong{color:#fff!important}.footer-wordmark span{color:#f2dce4!important}.legal-business{background:rgba(251,250,248,.12)!important;border-color:rgba(255,255,255,.35)!important;color:#f7f3f4!important}.legal-business strong{color:#fff!important}.copyright{border-top-color:rgba(255,255,255,.24)!important}
+.mobile-cta{background:rgba(79,77,81,.96)!important}.mobile-cta .book{background:var(--salon-hot)!important}
+.button.primary{background:var(--salon-hot)!important}.outline-dark{border-color:var(--salon-gray-deep)!important;color:var(--salon-gray-deep)!important}
+@media(max-width:1000px){.site-nav{background:var(--salon-gray)!important;color:#fff!important}.site-nav a:not(.nav-book){color:#fff!important}}
