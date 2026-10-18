@@ -1,0 +1,1 @@
+Trigger GitHub Pages rebuild after JoyfulExpressions repository was made public on 2026-10-18.
