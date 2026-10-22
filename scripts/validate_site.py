@@ -3,12 +3,16 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 from hashlib import sha256
+import argparse
 import json
 import re
 from PIL import Image
 
-root = Path(__file__).resolve().parents[1]
-records = json.loads((root / 'assets/images/manifest.json').read_text())
+source_root = Path(__file__).resolve().parents[1]
+parser = argparse.ArgumentParser()
+parser.add_argument('--site-root', type=Path, default=source_root)
+root = parser.parse_args().site_root.resolve()
+records = json.loads((source_root / 'assets/images/manifest.json').read_text())
 assert len(records) == 16, 'Expect 15 real client photos plus logo'
 count = 0
 for rec in records:
@@ -44,6 +48,14 @@ class Assets(HTMLParser):
             refs.append((a['href'], root))
         if tag == 'img' and a.get('src'):
             assert 'alt' in a and 'width' in a and 'height' in a, 'Images need text and intrinsic dimensions'
+            assert a['width'].isdigit() and a['height'].isdigit(), 'Image dimensions must be numeric'
+            src = urlsplit(a['src'])
+            if not src.scheme and not a['src'].startswith('//'):
+                path = (root / unquote(src.path)).resolve()
+                assert path.is_relative_to(root) and path.is_file(), f'Missing image: {path}'
+                with Image.open(path) as image:
+                    image.load()
+                    assert image.size == (int(a['width']), int(a['height'])), f'Wrong image dimensions: {path}'
 
 html = (root / 'index.html').read_text()
 Assets().feed(html)

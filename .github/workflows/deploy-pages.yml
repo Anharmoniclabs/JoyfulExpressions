@@ -29,11 +29,13 @@ jobs:
         run: |
           mkdir -p _site/assets
           cp index.html robots.txt sitemap.xml _site/
-          cp assets/styles.css assets/refined.css assets/salon-palette.css assets/script.js assets/favicon.svg _site/assets/
+          cp assets/styles.css assets/refined.css assets/halloween.css assets/salon-palette.css assets/script.js assets/favicon.svg _site/assets/
           cp -r assets/images _site/assets/
           rm -f _site/assets/images/manifest.json
           touch _site/.nojekyll
           if [ -f CNAME ]; then cp CNAME _site/; fi
+      - name: Validate the packaged website
+        run: python scripts/validate_site.py --site-root _site
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name != 'pull_request'
         with:
